@@ -14,7 +14,7 @@ ros.on('close', function () {
     console.log('Connection to websocket server closed.');
 });
 
-ros.connect('ws://localhost:9090');  
+ros.connect('ws://{{.Host}}:9090');  
 
 
 // First, we create a Topic object with details of the topic's name and message type.
