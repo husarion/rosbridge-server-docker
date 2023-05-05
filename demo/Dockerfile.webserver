@@ -7,5 +7,4 @@ COPY public/ .
 
 EXPOSE 8080
 
-# ENTRYPOINT [ "/bin/bash", "/caddy_entrypoint.sh" ]
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
