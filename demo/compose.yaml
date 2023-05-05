@@ -1,0 +1,19 @@
+services:
+  talker:
+    build:
+      dockerfile: Dockerfile.chatter
+    command: ros2 run demo_nodes_cpp talker
+
+  listener:
+    build:
+      dockerfile: Dockerfile.webserver
+    ports:
+      - 8080:8080
+
+  rosbridge-ws:
+    build:
+      dockerfile: Dockerfile
+      context: ../
+    ports:
+      - 9090:9090
+    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml

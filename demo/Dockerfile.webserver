@@ -1,0 +1,11 @@
+FROM caddy:2.6.2-alpine
+
+WORKDIR /src
+
+COPY Caddyfile /etc/caddy/
+COPY public/ .
+
+EXPOSE 8080
+
+# ENTRYPOINT [ "/bin/bash", "/caddy_entrypoint.sh" ]
+CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

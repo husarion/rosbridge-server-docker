@@ -1,0 +1,5 @@
+# Listen on localhost on the specified port
+:8080 {
+    root * /src
+    file_server
+}
